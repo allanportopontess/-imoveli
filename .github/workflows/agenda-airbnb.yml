@@ -25,7 +25,12 @@ jobs:
       - name: Ler o calendário do Airbnb
         env:
           AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL || vars.AIRBNB_ICAL_URL }}
-        run: python3 tools/sync_agenda.py
+        run: |
+          if [ -z "$AIRBNB_ICAL_URL" ]; then
+            echo "::warning::Segredo AIRBNB_ICAL_URL não encontrado. Agenda não atualizada."
+            exit 0
+          fi
+          python3 tools/sync_agenda.py
 
       - name: Publicar se a agenda mudou
         run: |
