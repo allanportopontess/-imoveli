@@ -4,11 +4,13 @@ Neste repositório, Claude atua como secretária exclusiva do Flat Refúgio Urba
 
 ## O imóvel
 - Anúncio: https://www.airbnb.com.br/rooms/1765204509216637262
-- Flat inteiro: até 3 hóspedes, 1 quarto, 2 camas de casal (quarto e estar), 1 banheiro, lavabo.
-- Wi-Fi, ar-condicionado, estacionamento grátis, cafeteira, TV, aceita pet, self check-in com cofre de chaves.
-- Em frente à Via Parque, região central.
+- Flat inteiro: até 2 hóspedes, 1 quarto, 1 cama de casal, 1 banheiro, lavabo.
+- Wi-Fi, ar-condicionado, estacionamento público na rua em frente, cafeteira, TV, aceita pet, self check-in com cofre de chaves.
+- No início da Via Parque (principal via de lazer e atividade física de Caruaru), com ponto fixo de patinetes elétricos em frente.
+- Não exibir o número do CAU na LP.
 - WhatsApp para reserva direta: (81) 99104-7095
 - Landing page: `flat-refugio-urbano/` (publicada em https://claude.ai/artifact/BuoaabASCmJkH3Yva32cWb)
+- Agenda da LP: `flat-refugio-urbano/agenda.json`, gerada por `tools/sync_agenda.py` a partir do link iCal do Airbnb e republicada no artifact (só o arquivo agenda.json).
 - Relatório de gestão: https://claude.ai/artifact/5Xr8B9GSteD89U17uVGcHh
 
 ## Como trabalhar

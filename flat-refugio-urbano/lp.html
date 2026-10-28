@@ -1,6 +1,6 @@
 <title>Flat Refúgio Urbano</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Flat privativo em Caruaru-PE, projetado pelo arquiteto Allan Porto. Até 3 hóspedes, Wi-Fi, ar-condicionado, garagem grátis e aceita pet. Reserve direto pelo WhatsApp.">
+<meta name="description" content="Flat privativo no início da Via Parque, em Caruaru-PE. Arquitetura que acolhe: cama de casal, Wi-Fi, ar-condicionado e aceita pet. Reserve direto pelo WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,0..100&family=Manrope:wght@300..700&display=swap">
@@ -218,11 +218,29 @@ select { font: 500 15px var(--body); color: var(--ink); background: #fff; border
 .food div { border-top: 1px solid var(--line); padding-top: 12px; }
 .food strong { display: block; font-weight: 600; }
 .food span { font-size: 14px; color: var(--soft); }
-.strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
-.strip figure { margin: 0; position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 16 / 10; background: #fff; }
-.strip img { width: 100%; height: 100%; object-fit: cover; }
-.strip figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(245,246,243,.95) 0%, rgba(245,246,243,0) 45%); }
-.strip figcaption { position: absolute; left: 18px; bottom: 14px; z-index: 2; font-size: 14px; font-weight: 600; }
+.tag { align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--sage-deep); background: var(--mist); padding: 6px 10px; border-radius: 999px; }
+.duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; margin-top: 18px; }
+.feature { background: #fff; border-radius: 22px; padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.feature h3 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.05; }
+.feature p { color: var(--soft); max-width: 48ch; }
+.feature a { font-size: 14px; font-weight: 600; color: var(--sage-deep); text-decoration: none; margin-top: auto; }
+.feature.dark { background: var(--ink); color: #fff; }
+.feature.dark .label { color: #b9cdbf; }
+.feature.dark p { color: rgba(255,255,255,.75); }
+.feature.dark a { color: #b9cdbf; }
+.scoot { position: absolute; left: 20px; right: 20px; top: 20px; z-index: 2; display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-radius: 16px; background: var(--ink); color: #fff; box-shadow: 0 14px 34px rgba(0,0,0,.18); }
+.scoot svg { width: 28px; height: 28px; flex: none; color: #b9cdbf; }
+.scoot b { display: block; font-size: 15px; }
+.scoot span { font-size: 13px; color: rgba(255,255,255,.72); }
+.perks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.perks li { display: flex; gap: 12px; align-items: baseline; font-weight: 500; }
+.perks li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--sage); flex: none; transform: translateY(-2px); }
+.cal-status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--soft); margin-bottom: 14px; }
+.cal-status i { width: 8px; height: 8px; border-radius: 50%; background: #c3c7c3; flex: none; }
+.cal-status.live i { background: var(--wa); box-shadow: 0 0 0 4px rgba(31,157,85,.15); }
+.day.busy { color: #c3c7c3; text-decoration: line-through; text-decoration-color: #d6d9d5; cursor: not-allowed; }
+.cal-msg { font-size: 13px; color: #b0532a; min-height: 1.2em; margin-top: 8px; }
+.progress { position: fixed; left: 0; right: 0; top: env(safe-area-inset-top, 0px); height: 2px; background: var(--sage-deep); transform-origin: left; transform: scaleX(0); z-index: 40; }
 .tips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
 .tip { background: #fff; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 6px; }
 .tip b { font-weight: 600; }
@@ -248,8 +266,22 @@ footer .credits { max-width: 62ch; }
 
 /* Entrada suave ao rolar (só onde o navegador suporta; sem isso, tudo já aparece) */
 @supports (animation-timeline: view()) {
-  .rise { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
-  @keyframes rise { from { opacity: .55; transform: translateY(36px); } to { opacity: 1; transform: none; } }
+  .rise { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 45%; }
+  @keyframes rise { from { opacity: .5; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+  .progress { animation: grow linear both; animation-timeline: scroll(root); }
+  @keyframes grow { to { transform: scaleX(1); } }
+  .slides { animation: drift linear both; animation-timeline: scroll(root); animation-range: 0 100vh; }
+  @keyframes drift { to { transform: translateY(22%) scale(1.04); } }
+  .hero-copy .wrap { animation: lift linear both; animation-timeline: scroll(root); animation-range: 0 70vh; }
+  @keyframes lift { to { transform: translateY(-80px); opacity: 0; } }
+  .reveal { animation: unveil linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
+  @keyframes unveil { from { clip-path: inset(10% 8% 10% 8% round 28px); } to { clip-path: inset(0 0 0 0 round 22px); } }
+  .reveal img { animation: settle linear both; animation-timeline: view(); animation-range: entry 0% cover 50%; }
+  @keyframes settle { from { transform: scale(1.18); } to { transform: scale(1); } }
+  .stat b { animation: count linear both; animation-timeline: view(); animation-range: entry 10% entry 90%; }
+  @keyframes count { from { opacity: .2; transform: translateY(30%); } to { opacity: 1; transform: none; } }
+  .head h2 { animation: track linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+  @keyframes track { from { letter-spacing: .02em; opacity: .4; } to { letter-spacing: -.02em; opacity: 1; } }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -260,7 +292,7 @@ footer .credits { max-width: 62ch; }
   .nav-links { display: none; }
   .intro, .host, .book, .loc, .faq, .two { grid-template-columns: minmax(0, 1fr); }
   .amen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .attr, .strip { grid-template-columns: minmax(0, 1fr); }
+  .attr, .duo { grid-template-columns: minmax(0, 1fr); }
   .tips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gal { grid-template-columns: minmax(0, 1fr); }
   .thumbs { flex-direction: row; overflow-x: auto; height: auto; min-height: 0; }
@@ -281,6 +313,7 @@ footer .credits { max-width: 62ch; }
 }
 </style>
 
+<div class="progress" aria-hidden="true"></div>
 <nav class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#topo">Refúgio Urbano</a>
@@ -322,16 +355,16 @@ footer .credits { max-width: 62ch; }
     <div class="wrap intro">
       <div class="intro-text rise">
         <span class="label">O flat</span>
-        <h2>Projetado por arquiteto. Feito para descansar.</h2>
-        <p class="lede">Privativo, aconchegante e de frente para a Via Parque. Ideal para trabalho, São João ou temporada.</p>
+        <h2>Arquitetura que acolhe.</h2>
+        <p class="lede">Um flat privativo pensado para o seu descanso, no início da Via Parque. Para trabalho, São João ou temporada.</p>
         <div class="chips">
-          <span class="chip">Self check-in</span><span class="chip">Garagem grátis</span><span class="chip">Aceita pet</span><span class="chip">Wi-Fi</span><span class="chip">Ar-condicionado</span>
+          <span class="chip">Self check-in</span><span class="chip">Estacionamento em frente</span><span class="chip">Aceita pet</span><span class="chip">Wi-Fi</span><span class="chip">Ar-condicionado</span>
         </div>
       </div>
       <div class="stats rise">
-        <div class="stat"><b>3</b><span>hóspedes</span></div>
+        <div class="stat"><b>2</b><span>hóspedes</span></div>
         <div class="stat"><b>1</b><span>quarto</span></div>
-        <div class="stat"><b>2</b><span>camas de casal</span></div>
+        <div class="stat"><b>1</b><span>cama de casal</span></div>
         <div class="stat"><b>1</b><span>banheiro + lavabo</span></div>
       </div>
     </div>
@@ -341,7 +374,7 @@ footer .credits { max-width: 62ch; }
     <div class="wrap">
       <div class="head rise">
         <span class="label">Fotos</span>
-        <h2>Cada canto, desenhado.</h2>
+        <h2>Cada detalhe, uma intenção.</h2>
       </div>
       <div class="gal rise">
         <div class="stage" id="stage">
@@ -354,9 +387,9 @@ footer .credits { max-width: 62ch; }
         <div class="thumbs" id="thumbs"></div>
       </div>
       <div class="fade-row">
-        <figure class="fx rise"><img src="img/vista-janela.jpg" alt="Vista da janela para a Via Parque" loading="lazy"><figcaption>Vista para a Via Parque</figcaption></figure>
-        <figure class="fx rise"><img src="img/lavabo-detalhe.jpg" alt="Cuba branca, torneira preta e boneca de barro" loading="lazy"><figcaption>Arte popular do Agreste</figcaption></figure>
-        <figure class="fx rise"><img src="img/aparador.jpg" alt="Aparador amarelo com luminária, taças e chaleira" loading="lazy"><figcaption>Café e chá à mão</figcaption></figure>
+        <figure class="fx reveal"><img src="img/vista-janela.jpg" alt="Vista da janela para a Via Parque" loading="lazy"><figcaption>Vista para a Via Parque</figcaption></figure>
+        <figure class="fx reveal"><img src="img/lavabo-detalhe.jpg" alt="Cuba branca, torneira preta e boneca de barro" loading="lazy"><figcaption>Arte popular do Agreste</figcaption></figure>
+        <figure class="fx reveal"><img src="img/aparador.jpg" alt="Aparador amarelo com luminária, taças e chaleira" loading="lazy"><figcaption>Café e chá à mão</figcaption></figure>
       </div>
     </div>
   </section>
@@ -370,7 +403,7 @@ footer .credits { max-width: 62ch; }
       <div class="amen rise">
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9a13 13 0 0 1 18 0M6 12.5a8 8 0 0 1 12 0M9 16a3.5 3.5 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/></svg><strong>Wi-Fi</strong><span>Para trabalhar e assistir.</span></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="8" rx="2"/><path d="M7 16v3M12 16v4M17 16v3"/></svg><strong>Ar-condicionado</strong><span>Split no ambiente.</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg><strong>Garagem grátis</strong><span>Vaga no próprio local.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg><strong>Estacionamento em frente</strong><span>Vagas públicas na rua, em frente ao flat.</span></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg><strong>Self check-in</strong><span>Cofre de chaves, no seu horário.</span></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/></svg><strong>Smart TV e som</strong><span>Streaming e caixa de som.</span></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V9Z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M8 3v3M11 3v3M14 3v3"/></svg><strong>Café e copa</strong><span>Cafeteira, chaleira, torradeira e liquidificador.</span></div>
@@ -386,7 +419,7 @@ footer .credits { max-width: 62ch; }
       <div class="host-copy rise">
         <span class="label">Seu anfitrião</span>
         <blockquote>Sou arquiteto e urbanista em Caruaru e projetei cada detalhe deste flat. Quero que você descanse como em casa e tenha a cidade logo na porta.</blockquote>
-        <div class="sig"><b>Allan Porto</b><span>Arquiteto e urbanista · CAU A166156-6 · <a href="https://www.instagram.com/allanporto_arquitetura/" target="_blank" rel="noopener">@allanporto_arquitetura</a></span></div>
+        <div class="sig"><b>Allan Porto</b><span>Arquiteto e urbanista · <a href="https://www.instagram.com/allanporto_arquitetura/" target="_blank" rel="noopener">@allanporto_arquitetura</a></span></div>
         <div class="host-stats"><span class="chip">Responde em até 1 hora</span><span class="chip">100% de resposta</span><span class="chip">Mora em Caruaru</span></div>
       </div>
     </div>
@@ -397,7 +430,7 @@ footer .credits { max-width: 62ch; }
       <div class="head rise">
         <span class="label">Disponibilidade</span>
         <h2>Escolha suas datas.</h2>
-        <p class="lede">Toque no dia de chegada e no de saída. A confirmação e o valor chegam pelo WhatsApp em até 1 hora.</p>
+        <p class="lede">Agenda sincronizada com o Airbnb. Toque na chegada e na saída e receba o valor pelo WhatsApp.</p>
       </div>
       <div class="book">
         <div class="cal">
@@ -406,8 +439,10 @@ footer .credits { max-width: 62ch; }
             <p id="calHint">Selecione a data de chegada</p>
             <button type="button" id="calNext" aria-label="Próximos meses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
           </div>
+          <p class="cal-status" id="calStatus"><i></i><span>Consultando a agenda…</span></p>
           <div class="months" id="months"></div>
-          <div class="legend"><span><i style="background:#d27a2c"></i>São João (alta procura)</span><span><i style="background:var(--ink)"></i>Chegada e saída</span></div>
+          <p class="cal-msg" id="calMsg" aria-live="polite"></p>
+          <div class="legend"><span><i style="background:#d27a2c"></i>São João (alta procura)</span><span><i style="background:var(--ink)"></i>Chegada e saída</span><span><i style="background:#c3c7c3"></i>Reservado</span></div>
         </div>
         <aside class="summary">
           <div class="sum-dates">
@@ -416,7 +451,7 @@ footer .credits { max-width: 62ch; }
           </div>
           <p class="nights" id="sNights">0<small>noites</small></p>
           <div class="row2">
-            <div class="field"><label for="guests">Hóspedes</label><select id="guests"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></div>
+            <div class="field"><label for="guests">Hóspedes</label><select id="guests"><option value="1">1</option><option value="2" selected>2</option></select></div>
             <div class="field"><label for="pet">Pet</label><select id="pet"><option value="não">Não</option><option value="sim">Sim</option></select></div>
           </div>
           <div class="field"><label for="reason">Motivo da viagem</label><select id="reason"><option>Trabalho</option><option>Lazer</option><option>São João</option><option>Temporada longa</option><option>Outro</option></select></div>
@@ -430,14 +465,16 @@ footer .credits { max-width: 62ch; }
 
   <section class="section" id="local" style="padding-top:0">
     <div class="wrap loc">
-      <div class="loc-photo rise">
+      <div class="loc-photo reveal">
         <img src="img/via-parque.jpg" alt="Via Parque de Caruaru com ciclofaixa e patinetes" loading="lazy">
-        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Via Parque, Caruaru</b><span>−8.2754, −35.9843</span></div></div>
+        <div class="scoot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 18h9l3-11h3M15 7h3"/></svg><div><b>Ponto fixo de patinetes elétricos</b><span>Na calçada, em frente ao flat</span></div></div>
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Início da Via Parque</b><span>Caruaru, PE</span></div></div>
       </div>
       <div class="loc-copy rise">
         <span class="label">Localização</span>
-        <h2>Região central, de frente para a Via Parque.</h2>
-        <p class="lede">Calçadão, ciclofaixa e patinete na porta. O endereço exato é enviado após a reserva.</p>
+        <h2>No início da Via Parque.</h2>
+        <p class="lede">A principal via de caminhada, corrida e lazer de Caruaru começa na sua porta. Região central, perto do comércio, das feiras e do polo médico.</p>
+        <ul class="perks"><li>Ponto fixo de patinetes elétricos em frente</li><li>Calçadão e ciclofaixa para treinar cedo</li><li>Estacionamento público na rua, em frente</li></ul>
         <div class="gps">
           <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=-8.2754,-35.9843" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Google Maps</a>
           <a class="btn btn-line" href="https://waze.com/ul?ll=-8.2754,-35.9843&amp;navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15a8 8 0 1 1 14 2.5L20 20h-6a8 8 0 0 1-10-5Z"/><circle cx="10" cy="11" r=".8" fill="currentColor"/><circle cx="15" cy="11" r=".8" fill="currentColor"/></svg>Waze</a>
@@ -445,8 +482,9 @@ footer .credits { max-width: 62ch; }
         <ul class="routes">
           <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=P%C3%A1tio+de+Eventos+Luiz+Gonzaga+Caruaru" target="_blank" rel="noopener">Pátio de Eventos Luiz Gonzaga<span>Ver rota</span></a></li>
           <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Alto+do+Moura+Caruaru" target="_blank" rel="noopener">Alto do Moura<span>Ver rota</span></a></li>
-          <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Feira+de+Caruaru+Parque+18+de+Maio" target="_blank" rel="noopener">Feira de Caruaru<span>Ver rota</span></a></li>
-          <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Monte+do+Bom+Jesus+Caruaru" target="_blank" rel="noopener">Monte do Bom Jesus<span>Ver rota</span></a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Feira+de+Caruaru+Parque+18+de+Maio" target="_blank" rel="noopener">Feira de Caruaru e Sulanca<span>Ver rota</span></a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Hospital+Mestre+Vitalino+Caruaru" target="_blank" rel="noopener">Hospital Mestre Vitalino<span>Ver rota</span></a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Hospital+Regional+do+Agreste+Caruaru" target="_blank" rel="noopener">Hospital Regional do Agreste<span>Ver rota</span></a></li>
         </ul>
       </div>
     </div>
@@ -460,12 +498,12 @@ footer .credits { max-width: 62ch; }
         <p class="lede">Barro, feira, sanfona e milho. O que ver, quando vir e o que comer.</p>
       </div>
 
-      <div class="sj rise">
+      <div class="sj reveal">
         <img src="img/caruaru-capital-forro.jpg" alt="Letreiro iluminado Caruaru, capital do forró" loading="lazy">
         <div class="sj-copy">
           <span class="label">São João de Caruaru</span>
           <h2>O maior São João do mundo.</h2>
-          <p>De abril ao fim de junho, a cidade vira festa. O auge é na véspera e no dia de São João, 23 e 24 de junho, no Pátio de Eventos Luiz Gonzaga.</p>
+          <p>Em junho, a cidade inteira vira festa. O auge é na véspera e no dia de São João, 23 e 24 de junho, no Pátio de Eventos Luiz Gonzaga.</p>
           <div class="sj-stats">
             <div><b>4 mi</b><span>visitantes em 2025</span></div>
             <div><b>27</b><span>polos de festa em 2026</span></div>
@@ -476,23 +514,32 @@ footer .credits { max-width: 62ch; }
 
       <div class="attr">
         <article class="card rise">
-          <div class="ph"><img src="img/caruaru-alto-do-moura.jpg" alt="Prateleiras de bonecos de barro coloridos" loading="lazy"></div>
-          <div class="bd"><h3>Alto do Moura</h3><p>Bairro dos artesãos do barro, terra do Mestre Vitalino. Ateliês abertos, Casa-Museu e comida regional.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Museu+Mestre+Vitalino+Caruaru" target="_blank" rel="noopener">Abrir no mapa →</a></div>
+          <div class="ph reveal"><img src="img/caruaru-alto-do-moura.jpg" alt="Prateleiras de bonecos de barro coloridos" loading="lazy"></div>
+          <div class="bd"><span class="tag">Maior centro de artes figurativas das Américas</span><h3>Alto do Moura</h3><p>Terra do Mestre Vitalino, que eternizou no barro o cotidiano do Agreste. Reúne ateliês abertos à visita, a Casa-Museu Mestre Vitalino e restaurantes de comida regional.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Museu+Mestre+Vitalino+Caruaru" target="_blank" rel="noopener">Abrir no mapa →</a></div>
         </article>
         <article class="card rise">
-          <div class="ph"><img src="img/caruaru-feira.jpg" alt="Banca de artesanato de barro na Feira de Caruaru" loading="lazy"></div>
-          <div class="bd"><h3>Feira de Caruaru</h3><p>Patrimônio Cultural Imaterial do Brasil. Artesanato, couro, ervas, comidas e a famosa sulanca.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Feira+de+Caruaru+Parque+18+de+Maio" target="_blank" rel="noopener">Abrir no mapa →</a></div>
+          <div class="ph reveal"><img src="img/caruaru-feira.jpg" alt="Banca de artesanato de barro na Feira de Caruaru" loading="lazy"></div>
+          <div class="bd"><span class="tag">Patrimônio Cultural Imaterial do Brasil</span><h3>Feira de Caruaru</h3><p>A feira mais famosa do Nordeste. Artesanato em barro e couro, ervas, comidas típicas e tudo o que o Agreste produz.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Feira+de+Caruaru+Parque+18+de+Maio" target="_blank" rel="noopener">Abrir no mapa →</a></div>
         </article>
         <article class="card rise">
-          <div class="ph"><img src="img/caruaru-skyline.jpg" alt="Vista panorâmica de Caruaru" loading="lazy"></div>
-          <div class="bd"><h3>Monte do Bom Jesus</h3><p>Igrejinha no alto e a melhor vista da cidade. Vá no fim da tarde.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Monte+do+Bom+Jesus+Caruaru" target="_blank" rel="noopener">Abrir no mapa →</a></div>
+          <div class="ph reveal"><img src="img/caruaru-boi-de-barro.jpg" alt="Bois de barro pintados à mão" loading="lazy"></div>
+          <div class="bd"><span class="tag">Artesanato</span><h3>Feira de Artesanato</h3><p>Bonecos, bois e cenas do sertão em barro pintado à mão. O melhor lugar para levar Caruaru para casa.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Feira+de+Artesanato+Caruaru" target="_blank" rel="noopener">Abrir no mapa →</a></div>
         </article>
       </div>
 
-      <div class="strip">
-        <figure class="rise"><img src="img/caruaru-boi-de-barro.jpg" alt="Bois de barro pintados" loading="lazy"><figcaption>Boi de barro</figcaption></figure>
-        <figure class="rise"><img src="img/caruaru-maracatu-barro.jpg" alt="Maracatu em cerâmica de Caruaru" loading="lazy"><figcaption>Maracatu em cerâmica</figcaption></figure>
-        <figure class="rise"><img src="img/caruaru-alto-do-moura.jpg" alt="Bonecos de barro do Alto do Moura" loading="lazy" style="object-position:center 70%"><figcaption>Bonecos do Alto do Moura</figcaption></figure>
+      <div class="duo">
+        <article class="feature rise">
+          <span class="label">Moda e negócios</span>
+          <h3>Feira da Sulanca</h3>
+          <p>Um dos maiores polos de confecção do país. Compradores de todo o Brasil vêm a Caruaru toda semana em busca de moda a preço de fábrica.</p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Feira+da+Sulanca+Caruaru" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="feature dark rise">
+          <span class="label">Saúde</span>
+          <h3>Polo médico do Agreste</h3>
+          <p>Caruaru reúne dois grandes hospitais, o Mestre Vitalino e o Regional do Agreste, referência para dezenas de cidades vizinhas. Um ponto de apoio tranquilo para pacientes, acompanhantes e profissionais.</p>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Hospital+Mestre+Vitalino+Caruaru" target="_blank" rel="noopener">Rota até o Mestre Vitalino →</a>
+        </article>
       </div>
 
       <div class="two">
@@ -502,8 +549,8 @@ footer .credits { max-width: 62ch; }
           <ul class="timeline">
             <li><b>Março</b><div><strong>Rodada de Negócios da Moda</strong><span>Compradores de todo o Brasil no polo de confecções.</span></div></li>
             <li><b>Semana Santa</b><div><strong>Paixão de Cristo de Nova Jerusalém</strong><span>Espetáculo ao ar livre em Fazenda Nova, perto de Caruaru.</span></div></li>
-            <li><b>Abr a jun</b><div><strong>São João</strong><span>Shows, quadrilhas e forró pé de serra em toda a cidade.</span></div></li>
-            <li><b>24 de junho</b><div><strong>Maior Milharada Assada do Mundo</strong><span>Tradição desde 1994, no dia de São João.</span></div></li>
+            <li><b>Junho</b><div><strong>São João</strong><span>Shows, quadrilhas e forró pé de serra em toda a cidade.</span></div></li>
+            <li><b>24 de junho</b><div><strong>Dia de São João</strong><span>O auge da festa no Pátio de Eventos Luiz Gonzaga.</span></div></li>
             <li><b>Julho</b><div><strong>Feira Moda Nordeste</strong><span>Feira de negócios para lojistas da região.</span></div></li>
           </ul>
         </div>
@@ -525,7 +572,7 @@ footer .credits { max-width: 62ch; }
         <div class="tip rise"><b>Clima</b><span>Dias quentes e noites mais frescas, sobretudo em junho e julho.</span></div>
         <div class="tip rise"><b>Recife</b><span>Cerca de 130 km pela BR-232.</span></div>
         <div class="tip rise"><b>São João</b><span>Reserve com meses de antecedência: a cidade lota.</span></div>
-        <div class="tip rise"><b>Patinete</b><span>Patinetes elétricos na Via Parque, em frente ao flat.</span></div>
+        <div class="tip rise"><b>Via Parque</b><span>O flat fica no início da principal via de lazer e atividade física da cidade.</span></div>
       </div>
     </div>
   </section>
@@ -534,9 +581,9 @@ footer .credits { max-width: 62ch; }
     <div class="wrap faq">
       <div class="head rise" style="margin:0"><span class="label">Dúvidas</span><h2>Antes de reservar.</h2></div>
       <div>
-        <details><summary>Quantas pessoas cabem?</summary><p>Até 3 hóspedes, com uma cama de casal no quarto e outra no estar.</p></details>
+        <details><summary>Quantas pessoas cabem?</summary><p>Até 2 pessoas, em uma cama de casal.</p></details>
         <details><summary>Como é o check-in?</summary><p>Self check-in com cofre de chaves. Você recebe as instruções antes de chegar.</p></details>
-        <details><summary>Tem estacionamento?</summary><p>Sim, gratuito e no próprio local.</p></details>
+        <details><summary>Onde estaciono?</summary><p>Na rua, em vagas públicas em frente ao flat.</p></details>
         <details><summary>Posso levar meu pet?</summary><p>Pode. Avise na reserva.</p></details>
         <details><summary>Serve para temporada longa?</summary><p>Serve. Para estadias de semanas ou meses, combine as condições pelo WhatsApp.</p></details>
       </div>
@@ -557,8 +604,8 @@ footer .credits { max-width: 62ch; }
 
 <footer>
   <div class="wrap">
-    <p>Flat Refúgio Urbano · Caruaru, PE · Projeto e hospedagem: Allan Porto Arquitetura, CAU A166156-6</p>
-    <p class="credits">Imagens de Caruaru via Wikimedia Commons: Ibrunovieira (CC BY-SA 4.0), Allan Patrick (CC BY-SA 2.0), Edudgarcia (CC BY-SA 4.0), Karlavidal (CC BY-SA 4.0), Dgreusard (CC BY-SA 4.0), Abdias Jr (CC BY 2.0). Dados do São João: Prefeitura de Caruaru.</p>
+    <p>Flat Refúgio Urbano · Caruaru, PE · Projeto e hospedagem: Allan Porto Arquitetura</p>
+    <p class="credits">Imagens de Caruaru via Wikimedia Commons: Ibrunovieira (CC BY-SA 4.0), Allan Patrick (CC BY-SA 2.0), Edudgarcia (CC BY-SA 4.0), Karlavidal (CC BY-SA 4.0). Dados do São João: Prefeitura de Caruaru.</p>
   </div>
 </footer>
 
@@ -633,7 +680,20 @@ footer .credits { max-width: 62ch; }
   var MONTHS = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
   var today = new Date(); today.setHours(0, 0, 0, 0);
   var base = new Date(today.getFullYear(), today.getMonth(), 1);
-  var offset = 0, ci = null, co = null;
+  var offset = 0, ci = null, co = null, busy = {};
+  var calStatus = document.getElementById("calStatus"), calMsg = document.getElementById("calMsg");
+  function iso(d) { return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+  function parseISO(t) { var a = t.split("-"); return new Date(+a[0], a[1] - 1, +a[2]); }
+  function rangeFree(a, b) { for (var d = new Date(a); d < b; d.setDate(d.getDate() + 1)) if (busy[iso(d)]) return false; return true; }
+  fetch("agenda.json", { cache: "no-store" }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) {
+    (j.bloqueados || []).forEach(function (p) { for (var d = parseISO(p[0]), e = parseISO(p[1]); d < e; d.setDate(d.getDate() + 1)) busy[iso(d)] = true; });
+    if (j.atualizado) {
+      var t = new Date(j.atualizado);
+      calStatus.classList.add("live");
+      calStatus.lastChild.textContent = "Sincronizado com o Airbnb · atualizado em " + ("0" + t.getDate()).slice(-2) + "/" + ("0" + (t.getMonth() + 1)).slice(-2) + " às " + ("0" + t.getHours()).slice(-2) + "h" + ("0" + t.getMinutes()).slice(-2);
+    } else { calStatus.lastChild.textContent = "Disponibilidade confirmada pelo WhatsApp"; }
+    render();
+  }).catch(function () { calStatus.lastChild.textContent = "Disponibilidade confirmada pelo WhatsApp"; });
   var monthsEl = document.getElementById("months"), hint = document.getElementById("calHint");
   function key(d) { return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate(); }
   function isSJ(d) { return d.getMonth() === 5 && d.getDate() >= 10 && d.getDate() <= 28; }
@@ -653,6 +713,7 @@ footer .credits { max-width: 62ch; }
         var btn = document.createElement("button"); btn.type = "button"; btn.className = "day"; btn.textContent = n;
         btn.setAttribute("aria-label", fmt(d));
         if (d < today) btn.disabled = true;
+        else if (busy[iso(d)]) { btn.classList.add("busy"); btn.setAttribute("aria-label", fmt(d) + ", reservado"); }
         if (isSJ(d)) btn.classList.add("sj");
         var k = key(d);
         if (ci && k === key(ci)) btn.classList.add("start");
@@ -667,8 +728,14 @@ footer .credits { max-width: 62ch; }
     update();
   }
   function pick(d) {
-    if (!ci || co || d <= ci) { ci = d; co = null; hint.textContent = "Agora, a data de saída"; }
-    else { co = d; hint.textContent = "Datas selecionadas"; }
+    calMsg.textContent = "";
+    if (!ci || co || d <= ci) {
+      if (busy[iso(d)]) { calMsg.textContent = "Essa noite já está reservada. Escolha outra chegada."; return; }
+      ci = d; co = null; hint.textContent = "Agora, a data de saída";
+    } else {
+      if (!rangeFree(ci, d)) { calMsg.textContent = "Há noites reservadas nesse período. Escolha outra saída."; return; }
+      co = d; hint.textContent = "Datas selecionadas";
+    }
     render();
   }
   document.getElementById("calPrev").addEventListener("click", function () { if (offset > 0) { offset -= 2; render(); } });
