@@ -1,0 +1,40 @@
+# Atualiza a agenda da LP do Flat Refúgio Urbano (branch gh-pages)
+# com o calendário do Airbnb, a cada 15 minutos.
+name: Agenda do Airbnb
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agenda-airbnb
+  cancel-in-progress: false
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Ler o calendário do Airbnb
+        env:
+          AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL }}
+        run: python3 tools/sync_agenda.py
+
+      - name: Publicar se a agenda mudou
+        run: |
+          if git diff --quiet agenda.json; then
+            echo "Sem mudanças."
+            exit 0
+          fi
+          git config user.name "agenda-bot"
+          git config user.email "agenda-bot@users.noreply.github.com"
+          git add agenda.json
+          git commit -m "Agenda atualizada pelo Airbnb"
+          git push
