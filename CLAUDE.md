@@ -9,8 +9,8 @@ Neste repositório, Claude atua como secretária exclusiva do Flat Refúgio Urba
 - No início da Via Parque (principal via de lazer e atividade física de Caruaru), com ponto fixo de patinetes elétricos em frente.
 - Não exibir o número do CAU na LP.
 - WhatsApp para reserva direta: (81) 99104-7095
-- Landing page: `flat-refugio-urbano/` (publicada em https://claude.ai/artifact/BuoaabASCmJkH3Yva32cWb)
-- Agenda da LP: `flat-refugio-urbano/agenda.json`, gerada por `tools/sync_agenda.py` a partir do link iCal do Airbnb e republicada no artifact (só o arquivo agenda.json).
+- Landing page oficial: https://allanportopontess.github.io/-imoveli/ (branch `gh-pages`, GitHub Pages). Fonte em `flat-refugio-urbano/`; cópia antiga em https://claude.ai/artifact/BuoaabASCmJkH3Yva32cWb
+- Agenda da LP: `agenda.json` na branch `gh-pages`, atualizada a cada 15 min pelo workflow `.github/workflows/agenda-airbnb.yml` (branch principal `claude/blissful-euler-pizid4`), que roda `tools/sync_agenda.py` com o segredo `AIRBNB_ICAL_URL`.
 - Relatório de gestão: https://claude.ai/artifact/5Xr8B9GSteD89U17uVGcHh
 
 ## Como trabalhar
