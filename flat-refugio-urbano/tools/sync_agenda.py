@@ -56,6 +56,13 @@ def main():
         "atualizado": dt.datetime.now(FUSO).isoformat(timespec="minutes"),
         "bloqueados": intervalos(ics),
     }
+    try:
+        with open(SAIDA, encoding="utf-8") as f:
+            if json.load(f).get("bloqueados") == dados["bloqueados"]:
+                print("Agenda sem mudanças.")
+                return
+    except (OSError, ValueError):
+        pass
     with open(SAIDA, "w", encoding="utf-8") as f:
         json.dump(dados, f, ensure_ascii=False, indent=1)
     print(f"{len(dados['bloqueados'])} períodos ocupados gravados em agenda.json")
