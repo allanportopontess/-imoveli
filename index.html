@@ -698,9 +698,8 @@ footer .credits { max-width: 62ch; }
   fetch("agenda.json", { cache: "no-store" }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) {
     (j.bloqueados || []).forEach(function (p) { for (var d = parseISO(p[0]), e = parseISO(p[1]); d < e; d.setDate(d.getDate() + 1)) busy[iso(d)] = true; });
     if (j.atualizado) {
-      var t = new Date(j.atualizado);
       calStatus.classList.add("live");
-      calStatus.lastChild.textContent = "Sincronizado com o Airbnb · atualizado em " + ("0" + t.getDate()).slice(-2) + "/" + ("0" + (t.getMonth() + 1)).slice(-2) + " às " + ("0" + t.getHours()).slice(-2) + "h" + ("0" + t.getMinutes()).slice(-2);
+      calStatus.lastChild.textContent = "Agenda sincronizada com o Airbnb";
     } else { calStatus.lastChild.textContent = "Disponibilidade confirmada pelo WhatsApp"; }
     render();
   }).catch(function () { calStatus.lastChild.textContent = "Disponibilidade confirmada pelo WhatsApp"; });
