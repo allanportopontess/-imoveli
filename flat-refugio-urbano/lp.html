@@ -1,358 +1,555 @@
 <title>Flat Refúgio Urbano</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Flat privativo em Caruaru-PE, projetado por arquiteto. Até 3 hóspedes, ar-condicionado, Wi-Fi, estacionamento grátis e aceita pet. Reserve direto pelo WhatsApp.">
+<meta name="description" content="Flat privativo em Caruaru-PE, projetado pelo arquiteto Allan Porto. Até 3 hóspedes, Wi-Fi, ar-condicionado, garagem grátis e aceita pet. Reserve direto pelo WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,0..100&family=Manrope:wght@300..700&display=swap">
 <style>
-/* Layout: faixas horizontais cortadas por uma "grade de serralheria" — as linhas verticais pretas da divisória do flat viram a estrutura da página */
+/* Layout: página branca e editorial; fotos sangradas com esmaecimento para o branco, títulos grandes e leves contra rótulos pequenos */
 :root {
-  --bg: #eceee8;
-  --surface: #f7f8f4;
-  --fg: #1b1e1b;
-  --muted: #5a625b;
-  --sage: #6c8774;
-  --sage-ink: #3f5747;
-  --sand: #d6c3a0;
-  --metal: #171917;
-  --line: #c9cec5;
-  --on-metal: #eef0ea;
-  --display: "Gloock", "Georgia", "Times New Roman", serif;
-  --body: "Figtree", "Segoe UI", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  --wrap: 1180px;
+  --bg: #ffffff;
+  --mist: #f5f6f3;
+  --ink: #1d221f;
+  --soft: #6a716c;
+  --sage: #7d9585;
+  --sage-deep: #48604f;
+  --sand: #ece4d6;
+  --line: #e7e9e5;
+  --wa: #1f9d55;
+  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --wrap: 1200px;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #121412; --surface: #1a1d1a; --fg: #e8ebe4; --muted: #a2aba3;
-    --sage: #8fac98; --sage-ink: #b9d0bf; --sand: #c4ae86; --metal: #0b0c0b;
-    --line: #2d322d; --on-metal: #eef0ea; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #121412; --surface: #1a1d1a; --fg: #e8ebe4; --muted: #a2aba3;
-  --sage: #8fac98; --sage-ink: #b9d0bf; --sand: #c4ae86; --metal: #0b0c0b;
-  --line: #2d322d; --on-metal: #eef0ea; color-scheme: dark;
-}
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
-body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.65; font-weight: 400; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
-:focus-visible { outline: 2px solid var(--sage); outline-offset: 3px; }
-
-.wrap { max-width: var(--wrap); margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.band { padding-block: clamp(56px, 9vw, 112px); }
-
-.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--sage-ink); }
-h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; }
-h1 { font-size: clamp(40px, 6.4vw, 78px); letter-spacing: -.01em; }
-h2 { font-size: clamp(30px, 4.2vw, 50px); }
-h3 { font-size: 22px; }
+:focus-visible { outline: 2px solid var(--sage); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 300; font-variation-settings: "SOFT" 100, "opsz" 144; margin: 0; line-height: 1.04; letter-spacing: -.02em; text-wrap: balance; }
+h1 { font-size: clamp(52px, 9vw, 128px); }
+h2 { font-size: clamp(38px, 5.6vw, 72px); }
+h3 { font-size: clamp(22px, 2.2vw, 28px); letter-spacing: -.01em; line-height: 1.15; }
 p { margin: 0; }
-.lede { font-size: clamp(18px, 1.6vw, 20px); color: var(--muted); max-width: 52ch; }
+.label { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-deep); }
+.lede { font-size: clamp(17px, 1.5vw, 20px); font-weight: 300; color: var(--soft); max-width: 46ch; }
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.section { padding-block: clamp(72px, 11vw, 140px); }
+.head { display: flex; flex-direction: column; gap: 18px; margin-bottom: clamp(36px, 5vw, 64px); }
 
-.btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 22px; font: 600 16px/1 var(--body); text-decoration: none; border: 1.5px solid var(--metal); cursor: pointer; transition: transform .15s ease, background .15s ease; }
-.btn-primary { background: var(--metal); color: var(--on-metal); }
-.btn-primary:hover { transform: translateY(-2px); }
-.btn-ghost { background: transparent; color: var(--fg); border-color: var(--fg); }
-.btn-ghost:hover { background: var(--surface); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 26px; border-radius: 999px; font: 600 15px/1 var(--body); text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform .25s ease, background .25s ease, box-shadow .25s ease; }
 .btn svg { width: 18px; height: 18px; flex: none; }
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-dark:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(29,34,31,.18); }
+.btn-wa { background: var(--wa); color: #fff; }
+.btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(31,157,85,.28); }
+.btn-line { background: #fff; color: var(--ink); border-color: var(--line); }
+.btn-line:hover { border-color: var(--ink); }
 
-/* Topo */
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
-.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
-.mark { font-family: var(--display); font-size: 21px; text-decoration: none; }
-.mark small { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--muted); margin-left: 8px; text-transform: uppercase; }
-.top .btn { padding: 11px 16px; font-size: 14px; }
+/* Navegação */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: #fff; }
+.nav { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 20; transition: background .3s ease, box-shadow .3s ease; }
+.nav.solid { background: rgba(255,255,255,.92); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { font-family: var(--display); font-weight: 400; font-size: 22px; font-variation-settings: "SOFT" 100; text-decoration: none; color: #fff; transition: color .3s ease; text-shadow: 0 1px 12px rgba(0,0,0,.25); }
+.nav.solid .brand { color: var(--ink); text-shadow: none; }
+.nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; }
+.nav-links a { text-decoration: none; color: #fff; opacity: .92; text-shadow: 0 1px 10px rgba(0,0,0,.3); }
+.nav.solid .nav-links a { color: var(--ink); text-shadow: none; }
+.nav .btn { padding: 11px 18px; font-size: 14px; }
 
 /* Hero */
-.hero { padding-block: clamp(32px, 6vw, 72px) clamp(48px, 7vw, 88px); }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
-.hero-copy { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
-.hero-copy h1 em { font-style: normal; color: var(--sage-ink); }
-.specs { display: flex; flex-wrap: wrap; border-top: 1px solid var(--fg); border-bottom: 1px solid var(--line); }
-.specs div { flex: 1 1 110px; padding: 12px 14px 12px 0; display: flex; flex-direction: column; gap: 2px; }
-.specs div + div { padding-left: 14px; border-left: 1px solid var(--line); }
-.specs b { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1; font-variant-numeric: tabular-nums; }
-.specs span { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero { position: relative; height: clamp(560px, 92svh, 900px); overflow: hidden; background: var(--mist); }
+.slides, .slides img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.slides img { object-fit: cover; opacity: 0; transform: scale(1.08); transition: opacity 1.6s ease, transform 7s linear; }
+.slides img.on { opacity: 1; transform: scale(1); }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 50%, rgba(255,255,255,.55) 80%, #fff 100%); pointer-events: none; }
+.hero-copy { position: absolute; left: 0; right: 0; bottom: clamp(28px, 6vw, 64px); z-index: 2; }
+.hero-copy .wrap { display: flex; flex-direction: column; gap: 18px; }
+.hero-copy .label { color: var(--ink); background: rgba(255,255,255,.8); backdrop-filter: blur(6px); align-self: flex-start; padding: 8px 14px; border-radius: 999px; letter-spacing: .14em; }
+.hero h1 { color: var(--ink); max-width: 11ch; }
+.hero h1 em { font-style: italic; color: var(--sage-deep); }
+.hero-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; justify-content: space-between; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.dots { display: flex; gap: 8px; }
+.dots button { width: 34px; height: 3px; border: 0; padding: 0; background: rgba(29,34,31,.2); cursor: pointer; border-radius: 3px; overflow: hidden; position: relative; }
+.dots button.on::after { content: ""; position: absolute; inset: 0; background: var(--ink); transform-origin: left; animation: bar 6s linear forwards; }
+@keyframes bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
-.frame { position: relative; min-width: 0; }
-.frame img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-right: 10px solid var(--metal); }
-.frame figcaption { margin-top: 10px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
-
-/* Comodidades */
-.amen-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 48px; align-items: end; margin-bottom: 40px; }
-.amen { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--fg); }
-.amen li { list-style: none; padding: 22px 18px 24px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.amen li:not(:nth-child(4n+1)) { padding-left: 18px; border-left: 1px solid var(--line); }
-.amen svg { width: 26px; height: 26px; color: var(--sage); }
-.amen strong { font-weight: 600; }
-.amen span { color: var(--muted); font-size: 15px; }
-ul.amen { margin: 0; padding: 0; }
+/* Números */
+.intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(36px, 6vw, 96px); align-items: end; }
+.intro-text { display: flex; flex-direction: column; gap: 22px; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.stat { padding: 22px 8px 0 0; display: flex; flex-direction: column; gap: 6px; }
+.stat b { font-family: var(--display); font-weight: 300; font-size: clamp(56px, 7vw, 92px); line-height: .9; font-variation-settings: "SOFT" 100, "opsz" 144; color: var(--ink); }
+.stat span { font-size: 13px; color: var(--soft); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 999px; background: var(--mist); color: var(--ink); }
 
 /* Galeria */
-.gallery-band { background: var(--metal); color: var(--on-metal); }
-.gallery-band .eyebrow { color: var(--sand); }
-.gallery-band .lede { color: color-mix(in srgb, var(--on-metal) 72%, transparent); }
-.gallery-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 36px; }
-.gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 6px; }
-.gallery figure { margin: 0; position: relative; overflow: hidden; min-width: 0; }
-.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-.gallery figure:hover img { transform: scale(1.03); }
-.gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px; font-family: var(--mono); font-size: 12px; line-height: 1.45; color: #f3f4ef; background: linear-gradient(transparent, rgba(10,12,10,.78)); }
-.g-a { grid-column: span 7; aspect-ratio: 4 / 3; }
-.g-b { grid-column: span 5; grid-row: span 2; }
-.g-c { grid-column: span 7; aspect-ratio: 4 / 3; }
-.g-d, .g-e, .g-f { grid-column: span 4; aspect-ratio: 3 / 4; }
+.gal { display: grid; grid-template-columns: minmax(0, 1fr) 132px; gap: 14px; }
+.stage { position: relative; aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden; background: var(--mist); max-width: 100%; }
+.stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); transition: opacity 1s ease, transform 1.4s ease; }
+.stage img.on { opacity: 1; transform: scale(1); }
+.cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 60px 24px 20px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; background: linear-gradient(transparent, rgba(0,0,0,.55)); color: #fff; }
+.cap p { font-family: var(--display); font-size: clamp(18px, 2vw, 24px); font-weight: 300; font-variation-settings: "SOFT" 100; }
+.cap span { font-size: 13px; opacity: .85; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.arrows { position: absolute; top: 50%; left: 14px; right: 14px; z-index: 3; display: flex; justify-content: space-between; transform: translateY(-50%); pointer-events: none; }
+.arrows button { pointer-events: auto; width: 48px; height: 48px; border-radius: 50%; border: 0; background: rgba(255,255,255,.85); backdrop-filter: blur(6px); cursor: pointer; display: grid; place-items: center; transition: transform .2s ease; color: var(--ink); }
+.arrows button:hover { transform: scale(1.06); }
+.arrows svg { width: 20px; height: 20px; }
+.thumbs { display: flex; flex-direction: column; gap: 10px; height: 0; min-height: 100%; overflow-y: auto; scrollbar-width: none; }
+.thumbs::-webkit-scrollbar { display: none; }
+.thumbs button { border: 0; padding: 0; border-radius: 12px; overflow: hidden; cursor: pointer; aspect-ratio: 1; flex: none; opacity: .45; transition: opacity .3s ease; background: var(--mist); }
+.thumbs button.on, .thumbs button:hover { opacity: 1; }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Memorial */
-.memo { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 6vw, 80px); }
-.memo-intro { display: flex; flex-direction: column; gap: 20px; }
-.memo-table { width: 100%; border-collapse: collapse; font-size: 15px; }
-.memo-table th, .memo-table td { text-align: left; vertical-align: top; padding: 14px 0; border-bottom: 1px solid var(--line); }
-.memo-table th { width: 34%; padding-right: 16px; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--sage-ink); }
-.memo-table tr:first-child th, .memo-table tr:first-child td { border-top: 1px solid var(--fg); }
-.signed { display: flex; gap: 14px; align-items: center; padding-top: 8px; }
-.signed .seal { width: 52px; height: 52px; border: 1.5px solid var(--fg); display: grid; place-items: center; font-family: var(--display); font-size: 20px; flex: none; }
-.signed p { font-size: 15px; color: var(--muted); }
-.signed a { color: var(--fg); }
+/* Faixa editorial com esmaecimento */
+.fade-row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 14px; margin-top: 14px; }
+.fade-row figure { margin: 0; position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 3 / 4; }
+.fade-row img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+.fade-row figure:hover img { transform: scale(1.04); }
+.fade-row figure.fx::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0) 45%, rgba(255,255,255,.96) 100%); }
+.fade-row figcaption { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 2; font-size: 14px; font-weight: 500; color: var(--ink); }
 
-/* Local */
-.local { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
-.local img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.local-copy { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
-.uses { display: grid; gap: 0; border-top: 1px solid var(--fg); margin: 0; padding: 0; }
-.uses li { list-style: none; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-.uses b { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--sage-ink); padding-top: 3px; }
+/* Comodidades */
+.amen { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
+.amen div { background: #fff; padding: 26px 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.amen svg { width: 26px; height: 26px; color: var(--sage-deep); }
+.amen strong { font-weight: 600; font-size: 16px; }
+.amen span { font-size: 14px; color: var(--soft); line-height: 1.5; }
 
-/* Reserva */
-.book-band { background: var(--surface); border-block: 1px solid var(--line); }
-.book { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 6vw, 80px); }
-.book-copy { display: flex; flex-direction: column; gap: 20px; }
-.why { margin: 0; padding: 0; display: grid; gap: 12px; }
-.why li { list-style: none; display: flex; gap: 12px; }
-.why li::before { content: ""; width: 10px; height: 10px; margin-top: 8px; background: var(--sage); flex: none; }
-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: clamp(20px, 3vw, 32px); background: var(--bg); border: 1.5px solid var(--fg); align-content: start; }
+/* Anfitrião */
+.host { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(36px, 6vw, 96px); align-items: center; }
+.host-photo { position: relative; aspect-ratio: 1; border-radius: 50%; overflow: hidden; max-width: 380px; width: 100%; justify-self: center; box-shadow: 0 30px 60px -30px rgba(29,34,31,.35); }
+.host-photo img { width: 100%; height: 100%; object-fit: cover; }
+.host-copy { display: flex; flex-direction: column; gap: 22px; }
+.host-copy blockquote { margin: 0; font-family: var(--display); font-weight: 300; font-size: clamp(24px, 2.8vw, 36px); line-height: 1.25; font-variation-settings: "SOFT" 100, "opsz" 72; letter-spacing: -.01em; }
+.sig { display: flex; flex-direction: column; gap: 2px; }
+.sig b { font-size: 17px; }
+.sig span { font-size: 14px; color: var(--soft); }
+.host-stats { display: flex; flex-wrap: wrap; gap: 10px; }
+.host-stats .chip { background: #fff; }
+
+/* Calendário */
+.book { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 28px; align-items: start; }
+.cal { border: 1px solid var(--line); border-radius: 22px; padding: clamp(18px, 3vw, 32px); min-width: 0; }
+.cal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; gap: 12px; }
+.cal-top button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: #fff; cursor: pointer; display: grid; place-items: center; color: var(--ink); flex: none; }
+.cal-top button:disabled { opacity: .3; cursor: default; }
+.cal-top svg { width: 16px; height: 16px; }
+.cal-top p { font-size: 14px; color: var(--soft); text-align: center; }
+.months { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.month h4 { margin: 0 0 12px; font-family: var(--display); font-weight: 400; font-size: 20px; font-variation-settings: "SOFT" 100; text-transform: capitalize; }
+.grid7 { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; text-align: center; }
+.grid7 .dow { font-size: 11px; font-weight: 600; color: var(--soft); padding-bottom: 6px; letter-spacing: .06em; }
+.day { aspect-ratio: 1; border: 0; background: none; font: 500 14px var(--body); color: var(--ink); cursor: pointer; border-radius: 50%; font-variant-numeric: tabular-nums; transition: background .15s ease; min-width: 0; padding: 0; position: relative; }
+.day:hover:not(:disabled) { background: var(--mist); }
+.day:disabled { color: #c3c7c3; cursor: default; }
+.day.in { background: var(--sand); border-radius: 0; }
+.day.start, .day.end { background: var(--ink); color: #fff; border-radius: 50%; }
+.day.sj:not(:disabled)::after { content: ""; position: absolute; left: 50%; bottom: 14%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #d27a2c; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; font-size: 13px; color: var(--soft); }
+.legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.summary { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 90px); background: var(--mist); border-radius: 22px; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.sum-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border-radius: 14px; overflow: hidden; }
+.sum-dates div { background: #fff; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.sum-dates small, .field label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); }
+.sum-dates b { font-weight: 600; font-size: 16px; font-variant-numeric: tabular-nums; }
+.nights { font-family: var(--display); font-weight: 300; font-size: 34px; font-variation-settings: "SOFT" 100; line-height: 1; }
+.nights small { font-family: var(--body); font-size: 14px; color: var(--soft); margin-left: 6px; }
 .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.field.full { grid-column: 1 / -1; }
-label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-input, select, textarea { font: 16px var(--body); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-bottom: 1.5px solid var(--fg); padding: 12px; width: 100%; min-width: 0; border-radius: 0; }
-textarea { resize: vertical; min-height: 84px; }
-.form-foot { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 12px; }
-.form-foot .btn { justify-content: center; width: 100%; }
-.nights { font-family: var(--mono); font-size: 13px; color: var(--sage-ink); min-height: 1.4em; }
-.phone { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); }
-.phone code { font-family: var(--mono); font-size: 15px; color: var(--fg); user-select: all; }
-.copy { font: 500 13px var(--body); background: none; border: 1px solid var(--line); color: var(--fg); padding: 6px 10px; cursor: pointer; }
-.alt { font-size: 14px; color: var(--muted); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+select { font: 500 15px var(--body); color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; width: 100%; min-width: 0; }
+.note { font-size: 13px; color: var(--soft); line-height: 1.5; }
+.summary .btn { width: 100%; }
+.phone { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--soft); flex-wrap: wrap; }
+.phone code { font: 600 15px var(--body); color: var(--ink); user-select: all; }
+.copy { font: 600 12px var(--body); background: #fff; border: 1px solid var(--line); color: var(--ink); padding: 6px 12px; border-radius: 999px; cursor: pointer; }
 
-/* FAQ */
-.faq { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 6vw, 80px); }
-details { border-bottom: 1px solid var(--line); padding: 18px 0; }
-details:first-of-type { border-top: 1px solid var(--fg); }
-summary { cursor: pointer; font-weight: 600; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+/* Localização */
+.loc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.loc-photo { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 5; }
+.loc-photo img { width: 100%; height: 100%; object-fit: cover; }
+.loc-photo::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 30%, rgba(255,255,255,0) 55%, rgba(255,255,255,.9) 100%); }
+.pin { position: absolute; left: 20px; bottom: 20px; z-index: 2; background: #fff; border-radius: 16px; padding: 14px 16px; display: flex; gap: 12px; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+.pin svg { width: 26px; height: 26px; color: var(--sage-deep); flex: none; }
+.pin b { display: block; font-size: 15px; }
+.pin span { font-size: 13px; color: var(--soft); font-variant-numeric: tabular-nums; }
+.loc-copy { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.gps { display: flex; flex-wrap: wrap; gap: 10px; }
+.routes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.routes li { border-bottom: 1px solid var(--line); }
+.routes a { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 15px 2px; text-decoration: none; font-weight: 500; }
+.routes a span { font-size: 13px; color: var(--sage-deep); font-weight: 600; white-space: nowrap; }
+.routes a:hover { color: var(--sage-deep); }
+
+/* Caruaru */
+.city { background: var(--mist); }
+.sj { position: relative; border-radius: 28px; overflow: hidden; min-height: 520px; display: flex; align-items: flex-end; color: #fff; }
+.sj > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sj::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,14,12,.8) 0%, rgba(10,14,12,.4) 55%, rgba(10,14,12,.05) 100%); }
+.sj-copy { position: relative; z-index: 2; padding: clamp(28px, 5vw, 60px); display: flex; flex-direction: column; gap: 20px; max-width: 640px; }
+.sj-copy .label { color: #f3c98b; }
+.sj-copy h2 { color: #fff; }
+.sj-copy p { color: rgba(255,255,255,.88); font-weight: 300; font-size: 18px; }
+.sj-stats { display: flex; flex-wrap: wrap; gap: 28px; }
+.sj-stats div { display: flex; flex-direction: column; }
+.sj-stats b { font-family: var(--display); font-weight: 300; font-size: clamp(40px, 5vw, 60px); line-height: 1; font-variation-settings: "SOFT" 100, "opsz" 144; }
+.sj-stats span { font-size: 13px; color: rgba(255,255,255,.78); }
+.attr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
+.card { background: #fff; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.card .ph { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+.card .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+.card:hover .ph img { transform: scale(1.05); }
+.card .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #fff 100%); }
+.card .bd { padding: 6px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card p { font-size: 15px; color: var(--soft); }
+.card a { font-size: 14px; font-weight: 600; color: var(--sage-deep); text-decoration: none; margin-top: auto; padding-top: 6px; }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; margin-top: 18px; }
+.panel { background: #fff; border-radius: 22px; padding: clamp(24px, 3.5vw, 40px); display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+.timeline b { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sage-deep); padding-top: 3px; }
+.timeline strong { display: block; font-weight: 600; }
+.timeline span { font-size: 14px; color: var(--soft); }
+.food { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
+.food div { border-top: 1px solid var(--line); padding-top: 12px; }
+.food strong { display: block; font-weight: 600; }
+.food span { font-size: 14px; color: var(--soft); }
+.strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
+.strip figure { margin: 0; position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 16 / 10; background: #fff; }
+.strip img { width: 100%; height: 100%; object-fit: cover; }
+.strip figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(245,246,243,.95) 0%, rgba(245,246,243,0) 45%); }
+.strip figcaption { position: absolute; left: 18px; bottom: 14px; z-index: 2; font-size: 14px; font-weight: 600; }
+.tips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
+.tip { background: #fff; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 6px; }
+.tip b { font-weight: 600; }
+.tip span { font-size: 14px; color: var(--soft); }
+
+/* FAQ e rodapé */
+.faq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 6vw, 96px); }
+details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+details:first-of-type { border-top: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
 summary::-webkit-details-marker { display: none; }
-summary::after { content: "+"; font-family: var(--mono); color: var(--sage-ink); }
-details[open] summary::after { content: "–"; }
-details p { margin-top: 10px; color: var(--muted); max-width: 60ch; }
-
-footer { background: var(--metal); color: var(--on-metal); }
-footer .wrap { padding-block: 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; font-size: 14px; }
-footer .mark { color: var(--on-metal); }
-footer p { color: color-mix(in srgb, var(--on-metal) 70%, transparent); }
-
-.float-wa { position: fixed; z-index: 8; right: max(16px, calc(env(safe-area-inset-right, 0px) + 16px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); width: 58px; height: 58px; border-radius: 50%; background: #1f9d55; color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+summary::after { content: "+"; font-size: 22px; font-weight: 300; color: var(--soft); line-height: 1; transition: transform .25s ease; }
+details[open] summary::after { transform: rotate(45deg); }
+details p { margin-top: 10px; color: var(--soft); max-width: 58ch; }
+.final { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.final h2 { max-width: 14ch; }
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 36px 110px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; font-size: 13px; color: var(--soft); }
+footer .credits { max-width: 62ch; }
+.float-wa { position: fixed; z-index: 25; right: max(18px, calc(env(safe-area-inset-right, 0px) + 18px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 18px); width: 60px; height: 60px; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 12px 30px rgba(31,157,85,.35); transition: transform .2s ease; }
+.float-wa:hover { transform: scale(1.06); }
 .float-wa svg { width: 28px; height: 28px; }
 
-@media (max-width: 900px) {
-  .hero-grid, .amen-head, .memo, .local, .book, .faq { grid-template-columns: minmax(0, 1fr); }
-  .amen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .amen li:not(:nth-child(4n+1)) { padding-left: 0; border-left: 0; }
-  .amen li:nth-child(2n) { padding-left: 18px; border-left: 1px solid var(--line); }
-  .g-a, .g-c { grid-column: span 12; }
-  .g-b { grid-column: span 12; grid-row: auto; aspect-ratio: 3 / 4; }
-  .g-d, .g-e, .g-f { grid-column: span 6; }
-  .g-f { grid-column: span 12; aspect-ratio: 4 / 3; }
+/* Entrada suave ao rolar (só onde o navegador suporta; sem isso, tudo já aparece) */
+@supports (animation-timeline: view()) {
+  .rise { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+  @keyframes rise { from { opacity: .55; transform: translateY(36px); } to { opacity: 1; transform: none; } }
 }
-@media (max-width: 520px) {
-  form { grid-template-columns: minmax(0, 1fr); }
-  .top .mark small { display: none; }
-  .uses li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .intro, .host, .book, .loc, .faq, .two { grid-template-columns: minmax(0, 1fr); }
+  .amen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .attr, .strip { grid-template-columns: minmax(0, 1fr); }
+  .tips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gal { grid-template-columns: minmax(0, 1fr); }
+  .thumbs { flex-direction: row; overflow-x: auto; height: auto; min-height: 0; }
+  .thumbs button { width: 76px; }
+  .summary { position: static; }
+  .host-photo { max-width: 280px; }
+}
+@media (max-width: 640px) {
+  .months { grid-template-columns: minmax(0, 1fr); }
+  .fade-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .fade-row figure:first-child { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 18px; }
+  .food, .tips { grid-template-columns: minmax(0, 1fr); }
+  .sj { min-height: 620px; }
+  .sj::after { background: linear-gradient(0deg, rgba(10,14,12,.88) 0%, rgba(10,14,12,.45) 60%, rgba(10,14,12,.1) 100%); }
+  .arrows button { width: 40px; height: 40px; }
+  .timeline li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
 }
 </style>
 
-<header class="top">
+<nav class="nav" id="nav">
   <div class="wrap">
-    <a class="mark" href="#inicio">Refúgio Urbano <small>Caruaru · PE</small></a>
-    <a class="btn btn-primary" href="#reservar">Reservar</a>
+    <a class="brand" href="#topo">Refúgio Urbano</a>
+    <div class="nav-links">
+      <a href="#fotos">Fotos</a>
+      <a href="#anfitriao">Anfitrião</a>
+      <a href="#reservar">Disponibilidade</a>
+      <a href="#local">Localização</a>
+      <a href="#caruaru">Caruaru</a>
+    </div>
+    <a class="btn btn-dark" href="#reservar">Reservar</a>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="slides" id="slides">
+    <img class="on" src="img/flat-geral.jpg" alt="Flat com cama de casal, divisória em serralheria preta e janela ampla">
+    <img src="img/estar.jpg" alt="Estar com smart TV, rack amarelo e mesa de vidro">
+    <img src="img/cabeceira.jpg" alt="Cabeceira estofada em gomos com luz indireta">
+    <img src="img/lavabo.jpg" alt="Lavabo verde-sálvia com bancada de granito preto">
+  </div>
+  <div class="hero-copy">
+    <div class="wrap">
+      <span class="label">Flat inteiro · Caruaru, Pernambuco</span>
+      <h1>Refúgio <em>Urbano</em></h1>
+      <div class="hero-row">
+        <div class="hero-cta">
+          <a class="btn btn-wa" href="#reservar"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.7-.6Z"/></svg>Ver datas e reservar</a>
+          <a class="btn btn-line" href="https://www.airbnb.com.br/rooms/1765204509216637262" target="_blank" rel="noopener">Ver no Airbnb</a>
+        </div>
+        <div class="dots" id="dots" aria-label="Fotos do destaque"></div>
+      </div>
+    </div>
   </div>
 </header>
 
-<main id="inicio">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">Flat inteiro · Caruaru, Pernambuco</span>
-        <h1>Um flat projetado por arquiteto, <em>no meio de Caruaru.</em></h1>
-        <p class="lede">Espaço privativo com design contemporâneo, enxoval de hotel e vista para a Via Parque. Para dormir bem numa viagem de trabalho, no São João ou numa temporada mais longa.</p>
-        <div class="specs" aria-label="Resumo do flat">
-          <div><b>3</b><span>hóspedes</span></div>
-          <div><b>1</b><span>quarto</span></div>
-          <div><b>2</b><span>camas de casal</span></div>
-          <div><b>1</b><span>banheiro</span></div>
-        </div>
-        <div class="ctas">
-          <a class="btn btn-primary" href="#reservar">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.7-.6Z"/></svg>
-            Reservar pelo WhatsApp
-          </a>
-          <a class="btn btn-ghost" href="https://www.airbnb.com.br/rooms/1765204509216637262" target="_blank" rel="noopener">Ver no Airbnb</a>
+<main>
+  <section class="section">
+    <div class="wrap intro">
+      <div class="intro-text rise">
+        <span class="label">O flat</span>
+        <h2>Projetado por arquiteto. Feito para descansar.</h2>
+        <p class="lede">Privativo, aconchegante e de frente para a Via Parque. Ideal para trabalho, São João ou temporada.</p>
+        <div class="chips">
+          <span class="chip">Self check-in</span><span class="chip">Garagem grátis</span><span class="chip">Aceita pet</span><span class="chip">Wi-Fi</span><span class="chip">Ar-condicionado</span>
         </div>
       </div>
-      <figure class="frame" style="margin:0">
-        <img src="img/flat-panorama.jpg" alt="Flat com cama de casal, cabeceira estofada iluminada, divisória em serralheria preta e janela ampla" width="1200" height="900">
-        <figcaption>Planta livre: quarto e estar separados por divisória em serralheria.</figcaption>
-      </figure>
+      <div class="stats rise">
+        <div class="stat"><b>3</b><span>hóspedes</span></div>
+        <div class="stat"><b>1</b><span>quarto</span></div>
+        <div class="stat"><b>2</b><span>camas de casal</span></div>
+        <div class="stat"><b>1</b><span>banheiro + lavabo</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="band" style="padding-top:0" aria-labelledby="t-amen">
+  <section class="section" id="fotos" style="padding-top:0">
     <div class="wrap">
-      <div class="amen-head">
-        <div style="display:flex;flex-direction:column;gap:14px">
-          <span class="eyebrow">O que está incluso</span>
-          <h2 id="t-amen">Chegou, largou a mala, descansou.</h2>
-        </div>
-        <p class="lede">Tudo o que você usa no dia a dia já está no flat. Sem taxa de garagem, sem procurar onde parar o carro.</p>
+      <div class="head rise">
+        <span class="label">Fotos</span>
+        <h2>Cada canto, desenhado.</h2>
       </div>
-      <ul class="amen">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9a13 13 0 0 1 18 0M6 12.5a8 8 0 0 1 12 0M9 16a3.5 3.5 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/></svg><strong>Wi-Fi</strong><span>Para trabalhar e assistir sem travar.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="8"/><path d="M6 10h12M8 16v3M12 16v4M16 16v3"/></svg><strong>Ar-condicionado</strong><span>Split no ambiente.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="3" width="16" height="18"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg><strong>Estacionamento grátis</strong><span>Vaga no próprio local.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V9Z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M8 3v3M11 3v3M14 3v3"/></svg><strong>Cafeteira</strong><span>Café passado antes de sair.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="12"/><path d="M8 21h8"/></svg><strong>Smart TV</strong><span>No quarto, para relaxar no fim do dia.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 18V8M3 13h18v5M21 13a4 4 0 0 0-4-4H9v4"/></svg><strong>2 camas de casal</strong><span>Uma no quarto e outra no estar.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7c0-1.7 1.3-3 3-3h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3Z"/><path d="M4 10h16"/></svg><strong>Enxoval de hotel</strong><span>Toalhas e roupa de cama lavadas.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="9" r="1.8"/><circle cx="17" cy="9" r="1.8"/><circle cx="10" cy="5" r="1.8"/><circle cx="14" cy="5" r="1.8"/><path d="M12 11c-3 0-5 3.5-5 6 0 1.6 1.4 2.5 3 2l2-.6 2 .6c1.6.5 3-.4 3-2 0-2.5-2-6-5-6Z"/></svg><strong>Aceita pet</strong><span>Seu bicho viaja com você.</span></li>
-      </ul>
+      <div class="gal rise">
+        <div class="stage" id="stage">
+          <div class="cap"><p id="capText"></p><span id="capCount"></span></div>
+          <div class="arrows">
+            <button type="button" id="prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" id="next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+      <div class="fade-row">
+        <figure class="fx rise"><img src="img/vista-janela.jpg" alt="Vista da janela para a Via Parque" loading="lazy"><figcaption>Vista para a Via Parque</figcaption></figure>
+        <figure class="fx rise"><img src="img/lavabo-detalhe.jpg" alt="Cuba branca, torneira preta e boneca de barro" loading="lazy"><figcaption>Arte popular do Agreste</figcaption></figure>
+        <figure class="fx rise"><img src="img/aparador.jpg" alt="Aparador amarelo com luminária, taças e chaleira" loading="lazy"><figcaption>Café e chá à mão</figcaption></figure>
+      </div>
     </div>
   </section>
 
-  <section class="band gallery-band" aria-labelledby="t-gal">
+  <section class="section" style="padding-top:0">
     <div class="wrap">
-      <div class="gallery-head">
-        <div style="display:flex;flex-direction:column;gap:14px">
-          <span class="eyebrow">Por dentro</span>
-          <h2 id="t-gal">Cada canto foi desenhado.</h2>
-        </div>
-        <p class="lede">Iluminação indireta, materiais escuros contra tons de areia e um lavabo em verde-sálvia. Fotos reais do flat.</p>
+      <div class="head rise">
+        <span class="label">Comodidades</span>
+        <h2>Chegue e só descanse.</h2>
       </div>
-      <div class="gallery">
-        <figure class="g-a"><img src="img/flat-panorama.jpg" alt="Vista geral do flat com cama, mesa e aparador" loading="lazy"><figcaption>Quarto e estar com janela de piso a teto</figcaption></figure>
-        <figure class="g-b"><img src="img/quarto-cabeceira.jpg" alt="Cabeceira estofada em gomos com fita de LED" loading="lazy"><figcaption>Cabeceira estofada com LED indireto</figcaption></figure>
-        <figure class="g-c"><img src="img/enxoval.jpg" alt="Toalhas enroladas sobre a cama arrumada" loading="lazy"><figcaption>Enxoval entregue como em hotel</figcaption></figure>
-        <figure class="g-d"><img src="img/lavabo.jpg" alt="Lavabo verde-sálvia com bancada de granito preto e espelho octogonal" loading="lazy"><figcaption>Lavabo: granito preto e espelho octogonal</figcaption></figure>
-        <figure class="g-e"><img src="img/lavabo-detalhe.jpg" alt="Detalhe da cuba branca, torneira preta e boneca de barro colorida" loading="lazy"><figcaption>Detalhe com arte popular do Agreste</figcaption></figure>
-        <figure class="g-f"><img src="img/banheiro.jpg" alt="Banheiro com revestimento marmorizado e box com cortina" loading="lazy"><figcaption>Banheiro com acabamento marmorizado</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" aria-labelledby="t-memo">
-    <div class="wrap memo">
-      <div class="memo-intro">
-        <span class="eyebrow">Memorial descritivo</span>
-        <h2 id="t-memo">Um projeto de arquitetura em que você pode dormir.</h2>
-        <p class="lede">O flat foi projetado e executado pelo próprio anfitrião, arquiteto e urbanista. Cada escolha tem um motivo, e o motivo é o seu descanso.</p>
-        <div class="signed">
-          <div class="seal" aria-hidden="true">AP</div>
-          <p><strong style="color:var(--fg)">Allan Porto</strong>, arquiteto e urbanista · CAU A166156-6<br><a href="https://www.instagram.com/allanporto_arquitetura/" target="_blank" rel="noopener">@allanporto_arquitetura</a></p>
-        </div>
-      </div>
-      <div style="overflow-x:auto">
-        <table class="memo-table">
-          <tr><th scope="row">Setorização</th><td>Planta livre. A divisória em serralheria preta com tela perfurada separa o quarto do estar sem bloquear a luz natural.</td></tr>
-          <tr><th scope="row">Iluminação</th><td>Fita de LED atrás da cabeceira, arandelas de leitura e trilho de spots. Luz quente à noite, sem ofuscar.</td></tr>
-          <tr><th scope="row">Cabeceira</th><td>Painel estofado em gomos verticais, em tom areia, do piso até a linha da luz.</td></tr>
-          <tr><th scope="row">Lavabo</th><td>Parede verde-sálvia, bancada suspensa em granito preto, cuba de apoio branca e metais pretos.</td></tr>
-          <tr><th scope="row">Paleta</th><td>Areia, sálvia e preto fosco, com toques de madeira natural e arte popular nordestina.</td></tr>
-          <tr><th scope="row">Uso</th><td>Estadias curtas ou longas, para trabalho ou descanso, com até 3 pessoas.</td></tr>
-        </table>
+      <div class="amen rise">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9a13 13 0 0 1 18 0M6 12.5a8 8 0 0 1 12 0M9 16a3.5 3.5 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/></svg><strong>Wi-Fi</strong><span>Para trabalhar e assistir.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="8" rx="2"/><path d="M7 16v3M12 16v4M17 16v3"/></svg><strong>Ar-condicionado</strong><span>Split no ambiente.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg><strong>Garagem grátis</strong><span>Vaga no próprio local.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg><strong>Self check-in</strong><span>Cofre de chaves, no seu horário.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/></svg><strong>Smart TV e som</strong><span>Streaming e caixa de som.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V9Z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M8 3v3M11 3v3M14 3v3"/></svg><strong>Café e copa</strong><span>Cafeteira, chaleira, torradeira e liquidificador.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z"/><path d="M4 10h16"/></svg><strong>Enxoval de hotel</strong><span>Toalhas, roupa de cama, xampu e sabonete.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="9" r="1.8"/><circle cx="17" cy="9" r="1.8"/><circle cx="10" cy="5" r="1.8"/><circle cx="14" cy="5" r="1.8"/><path d="M12 11c-3 0-5 3.5-5 6 0 1.6 1.4 2.5 3 2l2-.6 2 .6c1.6.5 3-.4 3-2 0-2.5-2-6-5-6Z"/></svg><strong>Aceita pet</strong><span>Seu bicho viaja junto.</span></div>
       </div>
     </div>
   </section>
 
-  <section class="band" style="padding-top:0" aria-labelledby="t-local">
-    <div class="wrap local">
-      <img src="img/via-parque.jpg" alt="Via Parque de Caruaru com ciclofaixa e patinetes elétricos em frente ao prédio" loading="lazy">
-      <div class="local-copy">
-        <span class="eyebrow">Localização</span>
-        <h2 id="t-local">De frente para a Via Parque.</h2>
-        <p class="lede">Região central, a poucos minutos do centro e do comércio. Na porta tem calçadão, ciclofaixa e patinete elétrico.</p>
-        <ul class="uses">
-          <li><b>Trabalho</b><span>Base para quem vem ao polo de confecções e ao comércio do Agreste.</span></li>
-          <li><b>São João</b><span>Estadia própria para o maior São João do mundo, sem depender de hotel lotado.</span></li>
-          <li><b>Temporada</b><span>Garagem, Wi-Fi e cafeteira para ficar semanas.</span></li>
+  <section class="section" id="anfitriao" style="background:var(--mist)">
+    <div class="wrap host">
+      <div class="host-photo rise"><img src="img/allan.jpg" alt="Allan Porto, anfitrião do flat" loading="lazy"></div>
+      <div class="host-copy rise">
+        <span class="label">Seu anfitrião</span>
+        <blockquote>Sou arquiteto e urbanista em Caruaru e projetei cada detalhe deste flat. Quero que você descanse como em casa e tenha a cidade logo na porta.</blockquote>
+        <div class="sig"><b>Allan Porto</b><span>Arquiteto e urbanista · CAU A166156-6 · <a href="https://www.instagram.com/allanporto_arquitetura/" target="_blank" rel="noopener">@allanporto_arquitetura</a></span></div>
+        <div class="host-stats"><span class="chip">Responde em até 1 hora</span><span class="chip">100% de resposta</span><span class="chip">Mora em Caruaru</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reservar">
+    <div class="wrap">
+      <div class="head rise">
+        <span class="label">Disponibilidade</span>
+        <h2>Escolha suas datas.</h2>
+        <p class="lede">Toque no dia de chegada e no de saída. A confirmação e o valor chegam pelo WhatsApp em até 1 hora.</p>
+      </div>
+      <div class="book">
+        <div class="cal">
+          <div class="cal-top">
+            <button type="button" id="calPrev" aria-label="Meses anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+            <p id="calHint">Selecione a data de chegada</p>
+            <button type="button" id="calNext" aria-label="Próximos meses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+          <div class="months" id="months"></div>
+          <div class="legend"><span><i style="background:#d27a2c"></i>São João (alta procura)</span><span><i style="background:var(--ink)"></i>Chegada e saída</span></div>
+        </div>
+        <aside class="summary">
+          <div class="sum-dates">
+            <div><small>Chegada</small><b id="sIn">—</b></div>
+            <div><small>Saída</small><b id="sOut">—</b></div>
+          </div>
+          <p class="nights" id="sNights">0<small>noites</small></p>
+          <div class="row2">
+            <div class="field"><label for="guests">Hóspedes</label><select id="guests"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></div>
+            <div class="field"><label for="pet">Pet</label><select id="pet"><option value="não">Não</option><option value="sim">Sim</option></select></div>
+          </div>
+          <div class="field"><label for="reason">Motivo da viagem</label><select id="reason"><option>Trabalho</option><option>Lazer</option><option>São João</option><option>Temporada longa</option><option>Outro</option></select></div>
+          <a class="btn btn-wa" id="send" href="https://wa.me/5581991047095" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.7-.6Z"/></svg>Consultar no WhatsApp</a>
+          <div class="phone">WhatsApp <code id="phone">(81) 99104-7095</code><button type="button" class="copy" id="copy">Copiar</button></div>
+          <p class="note">Prefere a garantia da plataforma? <a href="https://www.airbnb.com.br/rooms/1765204509216637262" target="_blank" rel="noopener">Reserve pelo Airbnb</a>.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="local" style="padding-top:0">
+    <div class="wrap loc">
+      <div class="loc-photo rise">
+        <img src="img/via-parque.jpg" alt="Via Parque de Caruaru com ciclofaixa e patinetes" loading="lazy">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Via Parque, Caruaru</b><span>−8.2754, −35.9843</span></div></div>
+      </div>
+      <div class="loc-copy rise">
+        <span class="label">Localização</span>
+        <h2>Região central, de frente para a Via Parque.</h2>
+        <p class="lede">Calçadão, ciclofaixa e patinete na porta. O endereço exato é enviado após a reserva.</p>
+        <div class="gps">
+          <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=-8.2754,-35.9843" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Google Maps</a>
+          <a class="btn btn-line" href="https://waze.com/ul?ll=-8.2754,-35.9843&amp;navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15a8 8 0 1 1 14 2.5L20 20h-6a8 8 0 0 1-10-5Z"/><circle cx="10" cy="11" r=".8" fill="currentColor"/><circle cx="15" cy="11" r=".8" fill="currentColor"/></svg>Waze</a>
+        </div>
+        <ul class="routes">
+          <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=P%C3%A1tio+de+Eventos+Luiz+Gonzaga+Caruaru" target="_blank" rel="noopener">Pátio de Eventos Luiz Gonzaga<span>Ver rota</span></a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Alto+do+Moura+Caruaru" target="_blank" rel="noopener">Alto do Moura<span>Ver rota</span></a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Feira+de+Caruaru+Parque+18+de+Maio" target="_blank" rel="noopener">Feira de Caruaru<span>Ver rota</span></a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=-8.2754,-35.9843&amp;destination=Monte+do+Bom+Jesus+Caruaru" target="_blank" rel="noopener">Monte do Bom Jesus<span>Ver rota</span></a></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="band book-band" id="reservar" aria-labelledby="t-book">
-    <div class="wrap book">
-      <div class="book-copy">
-        <span class="eyebrow">Reserva direta</span>
-        <h2 id="t-book">Fale direto com o anfitrião.</h2>
-        <p class="lede">Escolha as datas e mande a mensagem pronta no WhatsApp. Você recebe disponibilidade e valor na hora.</p>
-        <ul class="why">
-          <li>Resposta em até 1 hora, com o próprio Allan.</li>
-          <li>Combine horário de chegada, pet e pedidos especiais antes de fechar.</li>
-          <li>Prefere a garantia da plataforma? A reserva também pode ser feita pelo Airbnb.</li>
-        </ul>
+  <section class="section city" id="caruaru">
+    <div class="wrap">
+      <div class="head rise">
+        <span class="label">Guia de Caruaru</span>
+        <h2>A capital do forró.</h2>
+        <p class="lede">Barro, feira, sanfona e milho. O que ver, quando vir e o que comer.</p>
       </div>
-      <form id="booking" novalidate>
-        <div class="field"><label for="checkin">Check-in</label><input type="date" id="checkin" name="checkin"></div>
-        <div class="field"><label for="checkout">Check-out</label><input type="date" id="checkout" name="checkout"></div>
-        <div class="field"><label for="guests">Hóspedes</label>
-          <select id="guests" name="guests"><option value="1">1 hóspede</option><option value="2" selected>2 hóspedes</option><option value="3">3 hóspedes</option></select>
+
+      <div class="sj rise">
+        <img src="img/caruaru-capital-forro.jpg" alt="Letreiro iluminado Caruaru, capital do forró" loading="lazy">
+        <div class="sj-copy">
+          <span class="label">São João de Caruaru</span>
+          <h2>O maior São João do mundo.</h2>
+          <p>De abril ao fim de junho, a cidade vira festa. O auge é na véspera e no dia de São João, 23 e 24 de junho, no Pátio de Eventos Luiz Gonzaga.</p>
+          <div class="sj-stats">
+            <div><b>4 mi</b><span>visitantes em 2025</span></div>
+            <div><b>27</b><span>polos de festa em 2026</span></div>
+            <div><b>1.500</b><span>apresentações em 2026</span></div>
+          </div>
         </div>
-        <div class="field"><label for="reason">Motivo</label>
-          <select id="reason" name="reason"><option>Trabalho</option><option>Lazer</option><option>São João</option><option>Temporada longa</option><option>Outro</option></select>
+      </div>
+
+      <div class="attr">
+        <article class="card rise">
+          <div class="ph"><img src="img/caruaru-alto-do-moura.jpg" alt="Prateleiras de bonecos de barro coloridos" loading="lazy"></div>
+          <div class="bd"><h3>Alto do Moura</h3><p>Bairro dos artesãos do barro, terra do Mestre Vitalino. Ateliês abertos, Casa-Museu e comida regional.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Museu+Mestre+Vitalino+Caruaru" target="_blank" rel="noopener">Abrir no mapa →</a></div>
+        </article>
+        <article class="card rise">
+          <div class="ph"><img src="img/caruaru-feira.jpg" alt="Banca de artesanato de barro na Feira de Caruaru" loading="lazy"></div>
+          <div class="bd"><h3>Feira de Caruaru</h3><p>Patrimônio Cultural Imaterial do Brasil. Artesanato, couro, ervas, comidas e a famosa sulanca.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Feira+de+Caruaru+Parque+18+de+Maio" target="_blank" rel="noopener">Abrir no mapa →</a></div>
+        </article>
+        <article class="card rise">
+          <div class="ph"><img src="img/caruaru-skyline.jpg" alt="Vista panorâmica de Caruaru" loading="lazy"></div>
+          <div class="bd"><h3>Monte do Bom Jesus</h3><p>Igrejinha no alto e a melhor vista da cidade. Vá no fim da tarde.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Monte+do+Bom+Jesus+Caruaru" target="_blank" rel="noopener">Abrir no mapa →</a></div>
+        </article>
+      </div>
+
+      <div class="strip">
+        <figure class="rise"><img src="img/caruaru-boi-de-barro.jpg" alt="Bois de barro pintados" loading="lazy"><figcaption>Boi de barro</figcaption></figure>
+        <figure class="rise"><img src="img/caruaru-maracatu-barro.jpg" alt="Maracatu em cerâmica de Caruaru" loading="lazy"><figcaption>Maracatu em cerâmica</figcaption></figure>
+        <figure class="rise"><img src="img/caruaru-alto-do-moura.jpg" alt="Bonecos de barro do Alto do Moura" loading="lazy" style="object-position:center 70%"><figcaption>Bonecos do Alto do Moura</figcaption></figure>
+      </div>
+
+      <div class="two">
+        <div class="panel rise">
+          <span class="label">Calendário de festas</span>
+          <h3>Quando vir a Caruaru</h3>
+          <ul class="timeline">
+            <li><b>Março</b><div><strong>Rodada de Negócios da Moda</strong><span>Compradores de todo o Brasil no polo de confecções.</span></div></li>
+            <li><b>Semana Santa</b><div><strong>Paixão de Cristo de Nova Jerusalém</strong><span>Espetáculo ao ar livre em Fazenda Nova, perto de Caruaru.</span></div></li>
+            <li><b>Abr a jun</b><div><strong>São João</strong><span>Shows, quadrilhas e forró pé de serra em toda a cidade.</span></div></li>
+            <li><b>24 de junho</b><div><strong>Maior Milharada Assada do Mundo</strong><span>Tradição desde 1994, no dia de São João.</span></div></li>
+            <li><b>Julho</b><div><strong>Feira Moda Nordeste</strong><span>Feira de negócios para lojistas da região.</span></div></li>
+          </ul>
         </div>
-        <div class="field full"><label for="pet">Vai levar pet?</label>
-          <select id="pet" name="pet"><option value="não">Não</option><option value="sim">Sim</option></select>
+        <div class="panel rise">
+          <span class="label">Gastronomia</span>
+          <h3>O que provar</h3>
+          <div class="food">
+            <div><strong>Comidas de milho</strong><span>Pamonha, canjica, milho assado e bolo de milho.</span></div>
+            <div><strong>Carne de sol</strong><span>Com macaxeira, feijão verde e manteiga de garrafa.</span></div>
+            <div><strong>Bode guisado</strong><span>Clássico do Agreste, nos restaurantes do Alto do Moura.</span></div>
+            <div><strong>Cuscuz com queijo coalho</strong><span>O café da manhã pernambucano.</span></div>
+            <div><strong>Buchada e sarapatel</strong><span>Para quem quer a cozinha raiz.</span></div>
+            <div><strong>Doces de feira</strong><span>Cocada, pé de moleque e doce de leite.</span></div>
+          </div>
         </div>
-        <div class="field full"><label for="note">Observação (opcional)</label><textarea id="note" name="note" placeholder="Ex.: chego por volta das 20h"></textarea></div>
-        <div class="form-foot">
-          <p class="nights" id="nights" aria-live="polite"></p>
-          <a class="btn btn-primary" id="send" href="https://wa.me/5581991047095" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
-            Enviar pedido no WhatsApp
-          </a>
-          <div class="phone">WhatsApp: <code id="phone">(81) 99104-7095</code><button type="button" class="copy" id="copy">Copiar</button></div>
-          <p class="alt">Ou reserve pelo <a href="https://www.airbnb.com.br/rooms/1765204509216637262" target="_blank" rel="noopener">Airbnb</a>.</p>
-        </div>
-      </form>
+      </div>
+
+      <div class="tips">
+        <div class="tip rise"><b>Clima</b><span>Dias quentes e noites mais frescas, sobretudo em junho e julho.</span></div>
+        <div class="tip rise"><b>Recife</b><span>Cerca de 130 km pela BR-232.</span></div>
+        <div class="tip rise"><b>São João</b><span>Reserve com meses de antecedência: a cidade lota.</span></div>
+        <div class="tip rise"><b>Patinete</b><span>Patinetes elétricos na Via Parque, em frente ao flat.</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="band" aria-labelledby="t-faq">
+  <section class="section">
     <div class="wrap faq">
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <span class="eyebrow">Dúvidas</span>
-        <h2 id="t-faq">Antes de reservar.</h2>
-      </div>
+      <div class="head rise" style="margin:0"><span class="label">Dúvidas</span><h2>Antes de reservar.</h2></div>
       <div>
-        <details><summary>Quantas pessoas cabem?</summary><p>Até 3 hóspedes. Tem uma cama de casal no quarto e outra no estar.</p></details>
+        <details><summary>Quantas pessoas cabem?</summary><p>Até 3 hóspedes, com uma cama de casal no quarto e outra no estar.</p></details>
+        <details><summary>Como é o check-in?</summary><p>Self check-in com cofre de chaves. Você recebe as instruções antes de chegar.</p></details>
         <details><summary>Tem estacionamento?</summary><p>Sim, gratuito e no próprio local.</p></details>
-        <details><summary>Posso levar meu pet?</summary><p>Pode. Avise na reserva para deixarmos tudo preparado.</p></details>
-        <details><summary>Serve para ficar várias semanas?</summary><p>Serve. Tem Wi-Fi, ar-condicionado, cafeteira e espaço para trabalhar. Para estadias longas, fale no WhatsApp e combine as condições.</p></details>
-        <details><summary>Qual a diferença entre reservar direto e pelo Airbnb?</summary><p>Direto, você fala com o anfitrião e combina tudo antes. Pelo Airbnb, a reserva passa pelas regras e pela garantia da plataforma. As duas opções estão abertas.</p></details>
+        <details><summary>Posso levar meu pet?</summary><p>Pode. Avise na reserva.</p></details>
+        <details><summary>Serve para temporada longa?</summary><p>Serve. Para estadias de semanas ou meses, combine as condições pelo WhatsApp.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap final rise">
+      <span class="label">Flat Refúgio Urbano</span>
+      <h2>Sua próxima estadia em Caruaru começa aqui.</h2>
+      <div class="hero-cta" style="justify-content:center">
+        <a class="btn btn-wa" href="#reservar">Ver datas e reservar</a>
+        <a class="btn btn-line" href="https://www.instagram.com/allanporto_arquitetura/" target="_blank" rel="noopener">Instagram do arquiteto</a>
       </div>
     </div>
   </section>
@@ -360,11 +557,8 @@ footer p { color: color-mix(in srgb, var(--on-metal) 70%, transparent); }
 
 <footer>
   <div class="wrap">
-    <div style="display:flex;flex-direction:column;gap:6px">
-      <span class="mark">Flat Refúgio Urbano</span>
-      <p>Caruaru · Pernambuco</p>
-    </div>
-    <p>Projeto e hospedagem: Allan Porto Arquitetura · CAU A166156-6<br><a href="https://www.instagram.com/allanporto_arquitetura/" target="_blank" rel="noopener" style="color:var(--on-metal)">@allanporto_arquitetura</a></p>
+    <p>Flat Refúgio Urbano · Caruaru, PE · Projeto e hospedagem: Allan Porto Arquitetura, CAU A166156-6</p>
+    <p class="credits">Imagens de Caruaru via Wikimedia Commons: Ibrunovieira (CC BY-SA 4.0), Allan Patrick (CC BY-SA 2.0), Edudgarcia (CC BY-SA 4.0), Karlavidal (CC BY-SA 4.0), Dgreusard (CC BY-SA 4.0), Abdias Jr (CC BY 2.0). Dados do São João: Prefeitura de Caruaru.</p>
   </div>
 </footer>
 
@@ -375,38 +569,126 @@ footer p { color: color-mix(in srgb, var(--on-metal) 70%, transparent); }
 <script>
 (function () {
   var PHONE = "5581991047095";
-  var f = document.getElementById("booking");
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var nav = document.getElementById("nav");
+  function onScroll() { nav.classList.toggle("solid", window.scrollY > 60); }
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  /* Hero: fotos trocam com esmaecimento */
+  var slides = Array.prototype.slice.call(document.querySelectorAll("#slides img"));
+  var dots = document.getElementById("dots"), cur = 0, timer;
+  slides.forEach(function (s, i) {
+    var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Foto " + (i + 1));
+    b.addEventListener("click", function () { show(i); }); dots.appendChild(b);
+  });
+  function show(i) {
+    slides[cur].classList.remove("on"); dots.children[cur].classList.remove("on");
+    cur = (i + slides.length) % slides.length;
+    slides[cur].classList.add("on");
+    var d = dots.children[cur]; void d.offsetWidth; d.classList.add("on");
+    clearTimeout(timer); if (!reduce) timer = setTimeout(function () { show(cur + 1); }, 6000);
+  }
+  show(0);
+
+  /* Galeria */
+  var photos = [
+    ["flat-geral.jpg", "Quarto e estar em planta livre"],
+    ["quarto.jpg", "Divisória em serralheria e luz natural"],
+    ["cabeceira.jpg", "Cabeceira estofada com LED indireto"],
+    ["enxoval.jpg", "Enxoval entregue como em hotel"],
+    ["estar.jpg", "Estar com smart TV e mesa de vidro"],
+    ["mesa.jpg", "Mesa para refeições e trabalho"],
+    ["copa.jpg", "Copa com taças, louça e chaleira"],
+    ["ambientes.jpg", "Integração entre estar e quarto"],
+    ["lavabo.jpg", "Lavabo em verde-sálvia e granito preto"],
+    ["banheiro.jpg", "Banheiro com acabamento marmorizado"],
+    ["vista-janela.jpg", "Vista para a Via Parque"]
+  ];
+  var stage = document.getElementById("stage"), thumbs = document.getElementById("thumbs");
+  var capText = document.getElementById("capText"), capCount = document.getElementById("capCount");
+  var imgs = [], g = 0, gTimer;
+  photos.forEach(function (p, i) {
+    var im = document.createElement("img"); im.src = "img/" + p[0]; im.alt = p[1];
+    stage.insertBefore(im, stage.firstChild); imgs.push(im);
+    var t = document.createElement("button"); t.type = "button"; t.setAttribute("aria-label", p[1]);
+    t.innerHTML = '<img src="img/' + p[0] + '" alt="" loading="lazy">';
+    t.addEventListener("click", function () { go(i); }); thumbs.appendChild(t);
+  });
+  function go(i) {
+    imgs[g].classList.remove("on"); thumbs.children[g].classList.remove("on");
+    g = (i + photos.length) % photos.length;
+    imgs[g].classList.add("on"); thumbs.children[g].classList.add("on");
+    capText.textContent = photos[g][1]; capCount.textContent = (g + 1) + " / " + photos.length;
+    clearTimeout(gTimer); if (!reduce) gTimer = setTimeout(function () { go(g + 1); }, 5000);
+  }
+  document.getElementById("prev").addEventListener("click", function () { go(g - 1); });
+  document.getElementById("next").addEventListener("click", function () { go(g + 1); });
+  var sx = null;
+  stage.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener("touchend", function (e) { if (sx === null) return; var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) go(g + (dx < 0 ? 1 : -1)); sx = null; });
+  go(0);
+
+  /* Calendário */
+  var MONTHS = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var base = new Date(today.getFullYear(), today.getMonth(), 1);
+  var offset = 0, ci = null, co = null;
+  var monthsEl = document.getElementById("months"), hint = document.getElementById("calHint");
+  function key(d) { return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate(); }
+  function isSJ(d) { return d.getMonth() === 5 && d.getDate() >= 10 && d.getDate() <= 28; }
+  function fmt(d) { return d ? ("0" + d.getDate()).slice(-2) + "/" + ("0" + (d.getMonth() + 1)).slice(-2) + "/" + d.getFullYear() : "—"; }
+  function render() {
+    monthsEl.innerHTML = "";
+    for (var m = 0; m < 2; m++) {
+      var first = new Date(base.getFullYear(), base.getMonth() + offset + m, 1);
+      var box = document.createElement("div"); box.className = "month";
+      box.innerHTML = "<h4>" + MONTHS[first.getMonth()] + " " + first.getFullYear() + "</h4>";
+      var grid = document.createElement("div"); grid.className = "grid7";
+      ["D","S","T","Q","Q","S","S"].forEach(function (d) { var s = document.createElement("span"); s.className = "dow"; s.textContent = d; grid.appendChild(s); });
+      for (var b = 0; b < first.getDay(); b++) grid.appendChild(document.createElement("span"));
+      var days = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
+      for (var n = 1; n <= days; n++) {
+        var d = new Date(first.getFullYear(), first.getMonth(), n);
+        var btn = document.createElement("button"); btn.type = "button"; btn.className = "day"; btn.textContent = n;
+        btn.setAttribute("aria-label", fmt(d));
+        if (d < today) btn.disabled = true;
+        if (isSJ(d)) btn.classList.add("sj");
+        var k = key(d);
+        if (ci && k === key(ci)) btn.classList.add("start");
+        if (co && k === key(co)) btn.classList.add("end");
+        if (ci && co && k > key(ci) && k < key(co)) btn.classList.add("in");
+        btn.addEventListener("click", pick.bind(null, d));
+        grid.appendChild(btn);
+      }
+      box.appendChild(grid); monthsEl.appendChild(box);
+    }
+    document.getElementById("calPrev").disabled = offset === 0;
+    update();
+  }
+  function pick(d) {
+    if (!ci || co || d <= ci) { ci = d; co = null; hint.textContent = "Agora, a data de saída"; }
+    else { co = d; hint.textContent = "Datas selecionadas"; }
+    render();
+  }
+  document.getElementById("calPrev").addEventListener("click", function () { if (offset > 0) { offset -= 2; render(); } });
+  document.getElementById("calNext").addEventListener("click", function () { if (offset < 14) { offset += 2; render(); } });
+
   var send = document.getElementById("send");
-  var nights = document.getElementById("nights");
-  var ci = document.getElementById("checkin");
-  var co = document.getElementById("checkout");
-
-  function iso(d) { return d.toISOString().slice(0, 10); }
-  function br(v) { if (!v) return ""; var p = v.split("-"); return p[2] + "/" + p[1] + "/" + p[0]; }
-
-  var today = new Date();
-  ci.min = iso(today);
-  co.min = iso(new Date(today.getTime() + 864e5));
-
   function update() {
-    if (ci.value) co.min = iso(new Date(new Date(ci.value + "T12:00:00").getTime() + 864e5));
-    var n = 0;
-    if (ci.value && co.value) n = Math.round((new Date(co.value + "T12:00:00") - new Date(ci.value + "T12:00:00")) / 864e5);
-    nights.textContent = n > 0 ? n + (n === 1 ? " noite" : " noites") + " · " + br(ci.value) + " a " + br(co.value) : (ci.value && co.value ? "O check-out precisa ser depois do check-in." : "");
-
+    var n = ci && co ? Math.round((co - ci) / 864e5) : 0;
+    document.getElementById("sIn").textContent = fmt(ci);
+    document.getElementById("sOut").textContent = fmt(co);
+    document.getElementById("sNights").innerHTML = n + "<small>" + (n === 1 ? "noite" : "noites") + "</small>";
+    var g2 = document.getElementById("guests").value, pet = document.getElementById("pet").value, why = document.getElementById("reason").value;
     var lines = ["Olá, Allan! Quero reservar o Flat Refúgio Urbano."];
-    if (n > 0) lines.push("Datas: " + br(ci.value) + " a " + br(co.value) + " (" + n + (n === 1 ? " noite)" : " noites)"));
-    lines.push("Hóspedes: " + f.guests.value);
-    lines.push("Motivo: " + f.reason.value);
-    lines.push("Pet: " + f.pet.value);
-    if (f.note.value.trim()) lines.push("Obs.: " + f.note.value.trim());
-    lines.push("Tem disponibilidade e qual o valor?");
+    if (n > 0) lines.push("Datas: " + fmt(ci) + " a " + fmt(co) + " (" + n + (n === 1 ? " noite)" : " noites)"));
+    else if (ci) lines.push("Chegada: " + fmt(ci));
+    lines.push("Hóspedes: " + g2, "Pet: " + pet, "Motivo: " + why, "Está disponível? Qual o valor?");
     send.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lines.join("\n"));
   }
-  f.addEventListener("input", update);
-  f.addEventListener("change", update);
-  f.addEventListener("submit", function (e) { e.preventDefault(); });
-  update();
+  ["guests", "pet", "reason"].forEach(function (id) { document.getElementById(id).addEventListener("change", update); });
+  render();
 
   document.getElementById("copy").addEventListener("click", function () {
     var btn = this, code = document.getElementById("phone");
