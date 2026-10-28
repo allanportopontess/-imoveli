@@ -24,7 +24,7 @@ jobs:
 
       - name: Ler o calendário do Airbnb
         env:
-          AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL }}
+          AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL || vars.AIRBNB_ICAL_URL }}
         run: python3 tools/sync_agenda.py
 
       - name: Publicar se a agenda mudou
