@@ -26,3 +26,5 @@ Neste repositório, Claude atua como secretária exclusiva do Flat Refúgio Urba
 - Lançamento: R$ 189 (seg a qui) / R$ 219 (sex e sáb) até 5 avaliações. Base: R$ 239 / R$ 269.
 - São João, 10 a 28/06: R$ 590 a R$ 690, mínimo de 3 noites; 23 e 24/06: R$ 750.
 - Limpeza: R$ 70. Pet: R$ 40. Desconto semanal de 15% e mensal de 35%.
+- Taxa do Airbnb: modelo de taxa única do anfitrião. Na reserva de 28/10 foi R$ 39,73 sobre R$ 218,15 brutos (18,2%); o líquido é cerca de 82% do bruto.
+- Recebimento: conta bancária, 3 a 5 dias úteis após a liberação (que ocorre cerca de 24 h depois do check-in).
